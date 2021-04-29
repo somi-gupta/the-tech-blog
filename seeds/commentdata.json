@@ -1,0 +1,17 @@
+[
+    {
+      "comment_text": "Very nice",
+      "user_id": 1,
+      "blog_id": 1
+    },
+    {
+      "comment_text": "Need to improve",
+      "user_id": 2,
+      "blog_id": 2
+    },
+    {
+      "comment_text": "Still learning",
+      "user_id": 3,
+      "blog_id": 3
+    }
+]
