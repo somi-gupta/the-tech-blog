@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/new', (req, res) => {
+    res.render('blog');
+});
+
 router.get('/', withAuth, async (req, res) => {
     try {
        const dbBlogData = await  Blog.findAll({
@@ -68,7 +72,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             }
 
             const blog = dbBlogData.get({ plain: true });
-            res.render('edit-post', { blog, logged_in: true });
+            res.render('editBlog', { blog, logged_in: true });
         })
         .catch(err => {
             console.log(err.message);
@@ -103,6 +107,7 @@ router.get('/:id', withAuth, async (req, res) => {
         ]
     })
     const blogs = dbBlogData.map(blog => blog.get({ plain: true }));
+    res.json(blogs);
     res.render('dashboard', { blogs, logged_in: true });
 
     } catch (err) {
@@ -111,8 +116,6 @@ router.get('/:id', withAuth, async (req, res) => {
     }   
 });
 
-router.get('/new', (req, res) => {
-    res.render('blog');
-});
+
 
 module.exports = router;
