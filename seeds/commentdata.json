@@ -13,10 +13,5 @@
       "comment_text": "Still learning",
       "user_id": 3,
       "blog_id": 3
-    },
-    {
-      "comment_text": "Making progress",
-      "user_id": 4,
-      "blog_id": 3
     }
 ]
