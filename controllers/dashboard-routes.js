@@ -29,7 +29,7 @@ router.get('/', withAuth, async (req, res) => {
         ]
     })
     const blogs = dbBlogData.map(blog => blog.get({ plain: true }));
-    res.render('dashboard', { blogs, loggedIn: true });
+    res.render('dashboard', { blogs, logged_in: true });
 
     } catch (err) {
         console.log(err.message);
@@ -68,7 +68,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             }
 
             const blog = dbBlogData.get({ plain: true });
-            res.render('edit-post', { blog, loggedIn: true });
+            res.render('edit-post', { blog, logged_in: true });
         })
         .catch(err => {
             console.log(err.message);
@@ -103,7 +103,7 @@ router.get('/:id', withAuth, async (req, res) => {
         ]
     })
     const blogs = dbBlogData.map(blog => blog.get({ plain: true }));
-    res.render('dashboard', { blogs, loggedIn: true });
+    res.render('dashboard', { blogs, logged_in: true });
 
     } catch (err) {
         console.log(err);
