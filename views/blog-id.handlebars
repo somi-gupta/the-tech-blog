@@ -1,0 +1,21 @@
+
+{{> new-blog blog}}
+
+{{#if logged_in}}
+<div class="card">
+    <h3 class="card-header"></h3>
+    <form class="card-body comment-form" id="comment-form">
+
+        <label class="form-label">Comment</label>
+        <input id="inputcomment" name="comment-text" class="form-input" />
+
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+{{/if}}
+
+{{> comment blog.comments}}
+
+{{#if logged_in}}
+<script src="/js/commentBlog.js"></script>
+{{/if}}
