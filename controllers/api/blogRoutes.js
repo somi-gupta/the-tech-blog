@@ -59,12 +59,12 @@ router.get('/:id', (req, res) => {
               }
           ]
       })
-      .then(dbPostData => {
-          if (!dbPostData) {
-              res.status(404).json({ message: 'No post found with this id' });
+      .then(blogData => {
+          if (!blogData) {
+              res.status(404).json({ message: 'No blog found with this id' });
               return;
           }
-          res.json(dbPostData);
+          res.json(blogData);
       })
       .catch(err => {
           console.log(err);
